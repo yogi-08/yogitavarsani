@@ -1,98 +1,219 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Home Page</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-        }
-
-        main {
-            padding: 80px 20px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            margin-top: 50px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yogita Varsani – Senior Mobile Developer</title>
+<meta name="description" content="Yogita Varsani, senior mobile developer for Android, iOS and Flutter. Kotlin, Jetpack Compose, Clean Architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F0EEE9;--surface:#FAF9F6;--ink:#17292B;--muted:#55605F;--line:#D9D6CE;--accent:#1F5C63;--accent-ink:#FFFFFF;--tint:#E0E8E3;--pop:#E85D3F;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1F22;--surface:#14292D;--ink:#EEF0EA;--muted:#A7B5B3;--line:#25403F;--accent:#6FC7C0;--accent-ink:#08201F;--tint:#173539;--pop:#FF7A5C;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1F22;--surface:#14292D;--ink:#EEF0EA;--muted:#A7B5B3;--line:#25403F;--accent:#6FC7C0;--accent-ink:#08201F;--tint:#173539;--pop:#FF7A5C;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:11}
+.bar{max-width:1080px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:24px}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;margin-right:auto}
+.bar a.l{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+.bar a.l:hover{color:var(--accent)}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 14px;font:inherit;font-size:.9rem;cursor:pointer}
+.in{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:72px 0 8px}
+#hero{padding-top:88px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--tint);color:var(--accent);padding:5px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--pop)}
+h1{font-size:clamp(2.8rem,8vw,5.2rem);font-weight:700;letter-spacing:-.03em;margin:20px 0 12px}
+.sub{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:500;color:var(--accent);margin:0 0 20px}
+.tag{font-size:1.15rem;max-width:36em;color:var(--muted);margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font:inherit;font-weight:600}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:none;color:var(--ink)}
+.btn:hover{filter:brightness(1.08)}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.02em;margin-bottom:14px;max-width:20em}
+.lead{color:var(--muted);max-width:40em;margin:0 0 32px}
+p{margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted);margin:0 0 12px}
+.card p:last-child{margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
+.stat{border-top:3px solid var(--pop);padding-top:12px}
+.stat b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:2.4rem;line-height:1}
+.stat span{color:var(--muted);font-size:.95rem}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.proj.feature{grid-column:1/-1;border-color:var(--accent)}
+.proj .when{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+.proj h3{font-size:1.4rem;margin-bottom:10px}
+.proj p{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.chips li{background:var(--tint);color:var(--ink);border-radius:6px;padding:3px 10px;font-size:.85rem}
+.stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
+.stack h3{font-size:1.05rem;margin-bottom:8px}
+.stack .chips{margin:0}
+.job{position:relative;border-left:2px solid var(--line);padding:0 0 36px 28px;margin-left:6px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--pop);border:3px solid var(--bg)}
+.job h3{font-size:1.3rem}
+.job .meta{color:var(--muted);margin:4px 0 12px;font-size:.95rem}
+.job ul{margin:0;padding-left:18px;max-width:46em}
+.job li{margin-bottom:8px}
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.contact .card b{display:block;margin-bottom:6px}
+.contact a{color:var(--accent);font-weight:600;word-break:break-all}
+.copy{margin-top:8px;background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:3px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+footer{margin-top:72px;border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.9rem}
+@media (max-width:820px){.grid2,.projects,.stack,.contact{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.bar a.l{display:none}#hero{padding-top:56px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
-
 <body>
+<header class="top"><div class="bar">
+<a class="brand" href="#hero">YV</a>
+<a class="l" href="#about">About</a><a class="l" href="#projects">Projects</a><a class="l" href="#skills">Skills</a><a class="l" href="#experience">Experience</a><a class="l" href="#contact">Contact</a>
+<button class="theme" id="theme" type="button">Theme</button>
+</div></header>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Your simple homepage</p>
-    </header>
+<main class="in">
+<section id="hero">
+<span class="pill">Available for opportunities</span>
+<h1>Yogita Varsani</h1>
+<p class="sub">Senior mobile developer for Android, iOS and Flutter</p>
+<p class="tag">I build native Android apps with Kotlin and Jetpack Compose, from the first requirement to the Play Store release, with clean architecture and tests that keep them easy to change.</p>
+<div class="cta">
+<a class="btn primary" href="mailto:yogitavarsani11@gmail.com">Email me</a>
+<a class="btn ghost" href="#projects">See my projects</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/yogita-varsani/" rel="noopener">LinkedIn</a>
+</div>
+</section>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<section id="about">
+<h2>Apps that stay maintainable as they grow.</h2>
+<div class="grid2">
+<div>
+<p>I have more than five years of experience building production apps for Android, with solid hands-on work in iOS (Swift, SwiftUI) and Flutter. At Wama Technology I led the development of the Nitara apps and owned their architecture.</p>
+<p>I use Clean Architecture with MVVM and MVI, review code, and mentor other developers. I also work with AI coding tools such as Cursor, GitHub Copilot and Claude, and I keep quality high with unit, integration and UI tests.</p>
+</div>
+<div class="card">
+<h3>Education</h3>
+<p>B.Eng. Information Technology<br>GTU Gujarat, India, 2009 to 2013</p>
+<h3>Languages</h3>
+<p>Gujarati (native), Hindi (C2), English (C1), German (B2)</p>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><b>5+</b><span>years in mobile development</span></div>
+<div class="stat"><b>2</b><span>companies</span></div>
+<div class="stat"><b>3</b><span>platforms: Android, iOS, Flutter</span></div>
+<div class="stat"><b>15+</b><span>apps shipped</span></div>
+</div>
+</section>
 
-    <main id="home">
-        <h2>Hello, World!</h2>
-        <p>Welcome to my first website.</p>
-        <button onclick="alert('Welcome to my website!')">
-            Get Started
-        </button>
-    </main>
+<section id="projects">
+<h2>Products I’ve built</h2>
+<p class="lead">Apps I took from requirement to release, on native Android, iOS and Flutter.</p>
+<div class="projects">
+<article class="proj feature">
+<p class="when">2022 to 2024, Wama Technology</p>
+<h3>Nitara Farmer</h3>
+<p>The Android app was a multi-module Java and Kotlin project. I migrated the entire application to Flutter, learning Flutter, Dart and iOS to do it, and kept the architecture clean while moving it across frameworks.</p>
+<ul class="chips"><li>Kotlin</li><li>Java</li><li>Flutter</li><li>Dart</li><li>Swift</li><li>Multi-module</li></ul>
+</article>
+<article class="proj">
+<p class="when">2022 to 2024, Wama Technology</p>
+<h3>Nitara Friend, Inseminator and Vet</h3>
+<p>More apps in the Nitara family, built natively with Kotlin and Jetpack Compose on Android, Swift and SwiftUI on iOS, and with Flutter.</p>
+<ul class="chips"><li>Jetpack Compose</li><li>SwiftUI</li><li>MVVM</li><li>MVI</li></ul>
+</article>
+<article class="proj">
+<p class="when">2018 to 2022, EmpireTech</p>
+<h3>Bet Odyssey, Onelife Pharma, MyRenos and WeHelp Essential</h3>
+<p>Android and iOS apps, including voice assistant features that link native Android interfaces with voice-controlled functions.</p>
+<ul class="chips"><li>Kotlin</li><li>Java</li><li>Flutter</li></ul>
+</article>
+</div>
+</section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>This is a simple homepage created using HTML and CSS.</p>
-    </section>
+<section id="skills">
+<h2>Technologies I work with</h2>
+<p class="lead">A native-first stack, with iOS and Flutter alongside it.</p>
+<div class="stack">
+<div><h3>Android</h3><ul class="chips"><li>Kotlin</li><li>Java</li><li>Android SDK</li><li>Jetpack Compose</li><li>Coroutines</li><li>Room</li><li>XML layouts</li></ul></div>
+<div><h3>iOS and cross-platform</h3><ul class="chips"><li>Swift</li><li>SwiftUI</li><li>Flutter</li><li>Dart</li><li>Kotlin Multiplatform</li></ul></div>
+<div><h3>Architecture</h3><ul class="chips"><li>Clean Architecture</li><li>MVVM</li><li>MVI</li><li>BLoC</li><li>Multi-module</li><li>Hilt</li><li>Dagger</li><li>Koin</li></ul></div>
+<div><h3>APIs and data</h3><ul class="chips"><li>REST over HTTPS</li><li>JSON</li><li>GraphQL</li><li>Retrofit</li><li>SQLite</li><li>Realm</li><li>Firebase</li><li>Spring Boot</li></ul></div>
+<div><h3>Quality and delivery</h3><ul class="chips"><li>JUnit</li><li>Mockito</li><li>Espresso</li><li>Code reviews</li><li>GitLab CI/CD</li><li>Gradle</li><li>Fastlane</li></ul></div>
+<div><h3>Design and AI tools</h3><ul class="chips"><li>Material Design</li><li>Figma</li><li>Cursor</li><li>GitHub Copilot</li><li>Claude AI</li><li>JIRA</li><li>Confluence</li></ul></div>
+</div>
+</section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>We provide great services for our visitors.</p>
-    </section>
+<section id="experience">
+<h2>Where I’ve worked</h2>
+<p class="lead">Two companies, with a focus on native mobile development and technical ownership.</p>
+<div class="job">
+<h3>Senior software developer, Wama Technology</h3>
+<p class="meta">India, 01/2022 to 04/2024. Project: Nitara apps</p>
+<ul>
+<li>Led development on native Android, native iOS and Flutter, with technical ownership.</li>
+<li>Owned architecture and solution design with Clean Architecture, MVVM and MVI, including a multi-app and multi-flavor setup.</li>
+<li>Migrated Nitara Farmer from a multi-module Java and Kotlin app to Flutter.</li>
+<li>Integrated REST APIs and worked with the Spring Boot backend.</li>
+<li>Ran code reviews and testing, automated builds and releases with GitLab CI/CD, and published updates on the Play Store.</li>
+<li>Mentored developers and supported technical decisions.</li>
+</ul>
+</div>
+<div class="job">
+<h3>Software developer, EmpireTech</h3>
+<p class="meta">12/2018 to 01/2022. Projects: Bet Odyssey, Onelife Pharma, MyRenos, WeHelp Essential</p>
+<ul>
+<li>Helped develop and extend mobile apps for Android and iOS, using Kotlin, Java and Flutter.</li>
+<li>Supported the team in building new features from specifications and requirements.</li>
+<li>Found, localized and reproduced bugs in voice assistant applications to keep quality high.</li>
+<li>Analyzed and implemented the dependencies between native Android interfaces and voice-controlled applications so they work together smoothly.</li>
+<li>Worked with designers, backend and QA teams to deliver apps that are easy to use and work reliably.</li>
+<li>Documented code and work steps so the apps stay traceable and easy to extend later.</li>
+</ul>
+<ul class="chips" style="margin-top:16px"><li>Kotlin</li><li>Java</li><li>Android</li><li>Flutter</li><li>jQuery</li></ul>
+</div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: example@email.com</p>
-    </section>
+<section id="contact">
+<h2>Let’s build something reliable.</h2>
+<p class="lead">I’m open to senior mobile roles in Germany.</p>
+<div class="contact">
+<div class="card"><b>Email</b><a href="mailto:yogitavarsani11@gmail.com">yogitavarsani11@gmail.com</a><br><button class="copy" id="copy" type="button">Copy address</button></div>
+<div class="card"><b>LinkedIn</b><a href="https://www.linkedin.com/in/yogita-varsani/" rel="noopener">yogita-varsani</a></div>
+</div>
+</section>
+</main>
+<div class="in"><footer>© 2026 Yogita Varsani</footer></div>
 
-    <footer>
-        <p>&copy; 2026 My Website. All rights reserved.</p>
-    </footer>
-
+<script>
+(function(){
+var r=document.documentElement;
+document.getElementById('theme').addEventListener('click',function(){
+var cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+r.setAttribute('data-theme',dark?'light':'dark');
+});
+var c=document.getElementById('copy');
+c.addEventListener('click',function(){
+var m='yogitavarsani11@gmail.com';
+function done(t){c.textContent=t;setTimeout(function(){c.textContent='Copy address'},2000)}
+try{navigator.clipboard.writeText(m).then(function(){done('Copied')},function(){done('Select and copy above')})}catch(e){done('Select and copy above')}
+});
+})();
+</script>
 </body>
 </html>
